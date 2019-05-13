@@ -3,12 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1 class="pink">todos</h1>
+        </header>
+        <main>
+            <div class="todo-container">
+                <div class="input-section">
+                    <div class="arrow-container">
+                        <i class="arrow-down"></i>
+                    </div>
+                    <form>
+                        <input type="text" id="text-input" placeholder="What needs to be done?">
+                    </form>
+                </div>
+                <ul class="items-section">
+                    <li class="item">
+                        <div class="round">
+                            <input type="checkbox" id="checkbox" />
+                            <label for="checkbox"></label>
+                        </div>
+                        <form>
+                            <input type="text" class="item-input">
+                        </form>
+                    </li>
+                </ul>
+                <div class="bottom-info-block">
+                    <div class="bottom-text"><output id="item-counter"></output>items left</div>
+                    <ul class="button-wrapper">
+                        <li><button class="sort-button">All</button></li>
+                        <li><button class="sort-button">Active</button></li>
+                        <li><button class="sort-button">Completed</button></li>
+                    </ul>
+                    <div class="completed-label bottom-text"> Clear completed</div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            
+        </footer>
+    </div>
 </body>
 </html>
