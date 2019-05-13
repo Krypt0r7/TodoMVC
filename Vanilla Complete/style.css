@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 8em;
+  color: rgba(175, 47, 47, 0.15);
+  font-weight: normal;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  box-shadow: 0 5px 10px 3px rgb(224, 224, 224);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/*#region input*/
+
+.input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.input form {
+  flex: 10;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+  padding: 0.7em;
+}
+
+.input input::placeholder {
+  opacity: 0.3;
+  font-style: italic;
+}
+
+.mark-all {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.opacity-3 {
+  opacity: 0.3;
+}
+
+/*#endregion input*/
+
+/*#region todo*/
+
+.todos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  background: white;
+}
+
+.todos:hover .todo-text i {
+  visibility: visible;
+}
+
+.checkbox {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle i {
+  color: green;
+}
+
+.todo-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 10;
+  position: relative;
+  z-index: 1;
+}
+
+.text {
+  border: none;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 0.7em;
+  user-select: none;
+  background: white;
+  outline-color: rgb(202, 202, 202);
+}
+
+.todo-text form {
+  flex: 1;
+}
+
+.line-through {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
+.todo-text input:disabled {
+  background: white;
+}
+
+.display-under {
+  z-index: -1;
+}
+
+.todo-text i {
+  font-size: 1em;
+  color: rgb(143, 78, 99);
+  visibility: hidden;
+  position: absolute;
+  right: 2em;
+  transition: 0.5s;
+}
+
+.todo-text i:hover {
+  color: rgb(199, 118, 143);
+}
+
+/*#endregion todo*/
+
+/*#region footer*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.footer {
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 40px;
+  background: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #f6f6f6,
+    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #f6f6f6,
+    0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  padding: 0.7em;
+  position: relative;
+}
+
+.item-left {
+  display: flex;
+  position: absolute;
+  left: 1em;
+}
+
+.counter {
+  padding: 0 0.5em;
+}
+
+.sort-menu {
+  display: flex;
+  list-style: none;
+}
+
+.filters {
+  margin: 0 0.5em;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.active {
+  border: 1px solid rgba(175, 47, 47, 0.25);
+}
+
+.filters:hover {
+  border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+.clear-completed {
+  position: absolute;
+  right: 1em;
+}
+
+.clear-completed button {
+  border: none;
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.clear-completed button:hover {
+  text-decoration: underline;
+}
+
+/*#endregion footer*/
+
+.display-none {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  .filters {
+    margin: 0 0.2em;
+  }
+
+  .clear-completed {
+    font-size: 5px;
+  }
+}
