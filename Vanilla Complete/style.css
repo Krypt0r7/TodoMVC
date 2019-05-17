@@ -154,11 +154,11 @@ main {
   visibility: hidden;
   position: absolute;
   right: 2em;
-  transition: 0.5s;
 }
 
 .todo-text i:hover {
   color: rgb(199, 118, 143);
+  transition: 0.5s;
 }
 
 /*#endregion todo*/
@@ -255,5 +255,34 @@ footer {
 
   .clear-completed {
     font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text {
+    font-size: 1.2em;
+  }
+
+  .circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .footer {
+    height: 100px;
+    padding: 0 0.7em;
+  }
+
+  .input input {
+    font-size: 1.2em;
+  }
+
+  .sort-menu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sort-menu li {
+    padding-bottom: 0.7em;
   }
 }
