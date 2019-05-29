@@ -74,6 +74,15 @@ main {
   opacity: 0.3;
 }
 
+.arrow-down{
+  border: solid #737373;
+  border-width: 0px 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+}
+
+
 /*#endregion input*/
 
 /*#region todo*/
@@ -108,8 +117,18 @@ main {
   align-items: center;
 }
 
+
+.circle-check{
+  border: 1px solid #D0E5E1;
+}
+
 .circle i {
-  color: green;
+  border: solid #5DC2AF;
+  border-width: 1.5px 1.5px 0 0 ;
+  content: "";
+  height: 8px;
+  width: 16px;
+  transform: rotate(125deg);
 }
 
 .todo-text {

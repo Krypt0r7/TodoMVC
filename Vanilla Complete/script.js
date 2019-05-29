@@ -22,7 +22,7 @@ function CreateTodo(input) {
   const circle = document.createElement("div");
   circle.classList.add("circle");
   const iCheck = document.createElement("i");
-  iCheck.classList.add("fas", "fa-check", "hide");
+  iCheck.classList.add("hide");
   const todoText = document.createElement("div");
   todoText.classList.add("todo-text");
   const form = document.createElement("form");
@@ -51,13 +51,16 @@ function CreateTodo(input) {
 function CircleClick() {
   const checkMark = this.firstChild;
   const text = this.parentElement.nextSibling.firstChild.firstChild;
+  const circle = this;
 
   if (getComputedStyle(checkMark).visibility === "hidden") {
     checkMark.classList.remove("hide");
     text.classList.add("line-through");
+    circle.classList.add("circle-check");
   } else {
     checkMark.classList.add("hide");
     text.classList.remove("line-through");
+    circle.classList.remove("circle-check");
   }
   CheckForSelectedTodos();
   CountTodos();
@@ -152,6 +155,7 @@ function CheckForSelectedTodos() {
 
 function SelectAllTodos() {
   const icons = document.querySelectorAll(".circle i");
+  const circles = document.querySelectorAll(".circle");
   const markIcon = document.querySelector(".mark-all i");
   const clear = document.querySelector(".clear-completed button");
   const textFields = document.querySelectorAll(".text");
@@ -163,6 +167,7 @@ function SelectAllTodos() {
   ) {
     icons.forEach(i => {
       i.classList.remove("hide");
+      i.parentElement.classList.add("circle-check");
       markIcon.classList.remove("opacity-3");
       clear.classList.remove("hide");
     });
@@ -174,6 +179,7 @@ function SelectAllTodos() {
       i.classList.add("hide");
       markIcon.classList.add("opacity-3");
       clear.classList.add("hide");
+      i.parentElement.classList.remove("circle-check");
     });
     textFields.forEach(t => {
       t.classList.remove("line-through");
