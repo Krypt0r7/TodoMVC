@@ -6,6 +6,7 @@
 
 body {
   font-family: sans-serif;
+  background-color: #F5F5F5;
 }
 
 header {
@@ -25,9 +26,6 @@ main {
 }
 
 .main-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 550px;
   box-shadow: 0 5px 10px 3px rgb(224, 224, 224);
 }
@@ -40,8 +38,6 @@ main {
 
 .input {
   display: flex;
-  justify-content: center;
-  width: 100%;
   border-bottom: 1px solid rgb(233, 233, 233);
 }
 
@@ -68,6 +64,7 @@ main {
   justify-content: center;
   align-items: center;
   opacity: 0.7;
+  background-color: white;
 }
 
 .opacity-3 {
@@ -88,8 +85,6 @@ main {
 
 .todos {
   display: flex;
-  justify-content: center;
-  width: 100%;
   border-bottom: 1px solid rgb(233, 233, 233);
   background: white;
 }
