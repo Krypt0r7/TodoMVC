@@ -74,14 +74,13 @@ main {
   opacity: 0.3;
 }
 
-.arrow-down{
+.arrow-down {
   border: solid #737373;
   border-width: 0px 3px 3px 0;
   display: inline-block;
   padding: 5px;
   transform: rotate(45deg);
 }
-
 
 /*#endregion input*/
 
@@ -117,14 +116,13 @@ main {
   align-items: center;
 }
 
-
-.circle-check{
-  border: 1px solid #D0E5E1;
+.circle-check {
+  border: 1px solid #d0e5e1;
 }
 
 .circle i {
-  border: solid #5DC2AF;
-  border-width: 1.5px 1.5px 0 0 ;
+  border: solid #5dc2af;
+  border-width: 1.5px 1.5px 0 0;
   content: "";
   height: 8px;
   width: 16px;
@@ -169,10 +167,13 @@ main {
 
 .todo-text i {
   font-size: 1em;
+  font-style: normal;
+  font-weight: 800;
   color: rgb(143, 78, 99);
   visibility: hidden;
   position: absolute;
   right: 2em;
+  cursor: pointer;
 }
 
 .todo-text i:hover {

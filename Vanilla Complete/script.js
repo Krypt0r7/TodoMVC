@@ -31,7 +31,7 @@ function CreateTodo(input) {
   text.disabled = true;
   text.classList.add("text");
   const iTimes = document.createElement("i");
-  iTimes.classList.add("fas", "fa-times");
+  iTimes.textContent = "X";
 
   circle.appendChild(iCheck);
   checkbox.appendChild(circle);
