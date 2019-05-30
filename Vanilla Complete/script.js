@@ -62,6 +62,7 @@ function CircleClick() {
     text.classList.remove("line-through");
     circle.classList.remove("circle-check");
   }
+  CorrectFilterOnLoad();
   CheckForSelectedTodos();
   CountTodos();
   SaveToLocalStorage();
