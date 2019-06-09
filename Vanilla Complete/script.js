@@ -43,7 +43,13 @@ function CreateTodo(input) {
 
   circle.addEventListener("click", CircleClick);
   iTimes.addEventListener("click", RemoveTodo);
-  text.parentElement.addEventListener("dblclick", UpdateTodo);
+  form.addEventListener("dblclick", UpdateTodo);
+  form.addEventListener("submit", event => {
+    UpdateWithSubmit(event);
+  });
+  form.addEventListener("focusout", event => {
+    UpdateOnFocusOut(event);
+  });
 
   return todo;
 }
@@ -75,32 +81,38 @@ function UpdateTodo() {
     "hide"
   );
   text.parentElement.nextSibling.classList.add("display-under");
-  text.form.addEventListener("submit", event => {
-    event.preventDefault();
-    text.disabled = true;
-    text.parentElement.nextSibling.classList.remove("display-under");
-    text.parentElement.parentElement.parentElement.firstChild.classList.remove(
-      "hide"
-    );
-    SaveToLocalStorage();
-    if (text.value === "") {
-      this.parentElement.parentElement.remove();
-      CountTodos();
-    }
-  });
-  text.form.addEventListener("focusout", event => {
-    event.preventDefault();
-    text.disabled = true;
-    text.parentElement.nextSibling.classList.remove("display-under");
-    text.parentElement.parentElement.parentElement.firstChild.classList.remove(
-      "hide"
-    );
-    SaveToLocalStorage();
-    if (text.value === "") {
-      this.parentElement.parentElement.remove();
-      CountTodos();
-    }
-  });
+}
+
+function UpdateWithSubmit(event) {
+  event.preventDefault();
+  const text = event.target.firstChild;
+  text.disabled = true;
+  text.parentElement.nextSibling.classList.remove("display-under");
+  text.parentElement.parentElement.parentElement.firstChild.classList.remove(
+    "hide"
+  );
+  if (text.value === "") {
+    event.target.parentElement.parentElement.remove();
+    CountTodos();
+  }
+  localStorage.clear();
+  SaveToLocalStorage();
+}
+
+function UpdateOnFocusOut(event) {
+  event.preventDefault();
+  const text = event.target;
+  text.disabled = true;
+  text.parentElement.nextSibling.classList.remove("display-under");
+  text.parentElement.parentElement.parentElement.firstChild.classList.remove(
+    "hide"
+  );
+  if (text.value === "") {
+    event.target.parentElement.parentElement.parentElement.remove();
+    CountTodos();
+  }
+  localStorage.clear();
+  SaveToLocalStorage();
 }
 
 function RemoveTodo() {
@@ -336,6 +348,18 @@ window.addEventListener("load", () => {
       reAppliedTodo.childNodes[1].firstChild.addEventListener(
         "dblclick",
         UpdateTodo
+      );
+      reAppliedTodo.childNodes[1].firstChild.addEventListener(
+        "submit",
+        event => {
+          UpdateWithSubmit(event);
+        }
+      );
+      reAppliedTodo.childNodes[1].firstChild.addEventListener(
+        "focusout",
+        event => {
+          UpdateOnFocusOut(event);
+        }
       );
       input.after(reAppliedTodo);
     }
